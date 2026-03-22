@@ -27,6 +27,6 @@ The following softcore processors are included in our benchmark suite:
 | Softcore | Architecture | Target FPGA | Notes |
 |----------|-------------|-------------|-------|
 | MicroBlaze | 32-bit RISC | Xilinx/AMD | Xilinx proprietary softcore |
-| LEON3 | 32-bit SPARC V8 | Vendor-agnostic (Xilinx tested) | Open-source, FrontGrade Gaisler |
+| LEON3 | 32-bit SPARC V8 | Vendor-agnostic | Open-source, FrontGrade Gaisler |
 | PicoRV32 | 32-bit RISC-V | Vendor-agnostic | Open-source, YosysHQ |
 | VexRiscv | 32-bit RISC-V | Vendor-agnostic | Configurable pipeline depth |
