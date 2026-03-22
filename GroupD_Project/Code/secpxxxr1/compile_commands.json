@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/Denny/Vitis_Workspace/ECC_Benchmark/build",
+  "command": "C:\\AMDDesignTools\\2025.2\\Vitis\\gnu\\microblaze\\nt\\bin\\mb-gcc.exe -IC:/Users/Denny/Vitis_Workspace/ECC_Benchmark/src -IC:/Users/Denny/Vitis_Workspace/ECC_Benchmark/src/. -isystem C:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/include -isystem C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include -isystem C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include-fixed -isystem C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/microblazeeb-xilinx-elf/usr/include   -mlittle-endian -mxl-soft-mul -mcpu=v11.0 -DSDT  -MMD -MP -specs=C:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/Xilinx.spec -IC:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/include -Wall -Wextra      -O0  -g3     -U__clang__ -o CMakeFiles\\ECC_Benchmark.elf.dir\\main.c.obj -c C:\\Users\\Denny\\Vitis_Workspace\\ECC_Benchmark\\src\\main.c",
+  "file": "C:\\Users\\Denny\\Vitis_Workspace\\ECC_Benchmark\\src\\main.c"
+},
+{
+  "directory": "C:/Users/Denny/Vitis_Workspace/ECC_Benchmark/build",
+  "command": "C:\\AMDDesignTools\\2025.2\\Vitis\\gnu\\microblaze\\nt\\bin\\mb-gcc.exe -IC:/Users/Denny/Vitis_Workspace/ECC_Benchmark/src -IC:/Users/Denny/Vitis_Workspace/ECC_Benchmark/src/. -isystem C:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/include -isystem C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include -isystem C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include-fixed -isystem C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/microblazeeb-xilinx-elf/usr/include   -mlittle-endian -mxl-soft-mul -mcpu=v11.0 -DSDT  -MMD -MP -specs=C:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/Xilinx.spec -IC:/Users/Denny/Vitis_Workspace/platform/export/platform/sw/standalone_microblaze_0/include -Wall -Wextra      -O0  -g3     -U__clang__ -o CMakeFiles\\ECC_Benchmark.elf.dir\\uECC.c.obj -c C:\\Users\\Denny\\Vitis_Workspace\\ECC_Benchmark\\src\\uECC.c",
+  "file": "C:\\Users\\Denny\\Vitis_Workspace\\ECC_Benchmark\\src\\uECC.c"
+}
+]
