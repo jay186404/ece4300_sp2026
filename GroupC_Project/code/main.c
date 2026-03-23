@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+#include "aes.h"
+#define numtests 1000000 //does a million tests (or however many we want to change it to)
+
+void print_hex(const char *label, const uint8_t *buf, int len) { //prints array bytes in hexadecimal values for ciphertext, expected, etc.
+    int i;
+    printf("%s", label);
+    for (i = 0; i < len; i++) {
+        printf("%02x", buf[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+
+    printf("\nAES test starting...\n");
+
+
+    //different key combinations: Must take out the comment code
+    
+    //-------------- AES-128 key ---------------
+    printf("Testing AES-128\n");
+    uint8_t key[16] = {
+        0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,
+        0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c
+    };
+
+    // Plaintext
+    uint8_t plaintext[16] = {
+        0x32,0x43,0xf6,0xa8,0x88,0x5a,0x30,0x8d,
+        0x31,0x31,0x98,0xa2,0xe0,0x37,0x07,0x34
+    };
+
+    // Expected ciphertext
+    uint8_t expected[16] = {
+        0x39,0x25,0x84,0x1d,0x02,0xdc,0x09,0xfb,
+        0xdc,0x11,0x85,0x97,0x19,0x6a,0x0b,0x32
+    };
+     //REMOVE THESE COMMENTS TO USE AES-128
+
+
+    /* //REMOVE THESE COMMENTS TO USE AES-192
+    printf("Testing AES-192\n");
+    //--------- AES - 192 key------------ 
+    uint8_t key[24] = {
+    0x8e,0x73,0xb0,0xf7,0xda,0x0e,0x64,0x52,
+    0xc8,0x10,0xf3,0x2b,0x80,0x90,0x79,0xe5,
+    0x62,0xf8,0xea,0xd2,0x52,0x2c,0x6b,0x7b
+    };
+
+    // Plaintext
+    uint8_t plaintext[16] = {
+    0x6b,0xc1,0xbe,0xe2,0x2e,0x40,0x9f,0x96,
+    0xe9,0x3d,0x7e,0x11,0x73,0x93,0x17,0x2a
+    };
+
+    //Expected ciphertext
+    uint8_t expected[16] = {
+    0xbd,0x33,0x4f,0x1d,0x6e,0x45,0xf2,0x5f,
+    0xf7,0x12,0xa2,0x14,0x57,0x1f,0xa5,0xcc
+    };
+    */ //REMOVE THESE COMMENTS TO USE AES-192
+
+
+    //REMOVE THESE COMMENTS TO USE AES-256
+    /*printf("Testing AES-256\n");
+    //----------AES - 256 Key----------------
+    uint8_t key[32] = {
+    0x60,0x3d,0xeb,0x10,0x15,0xca,0x71,0xbe,
+    0x2b,0x73,0xae,0xf0,0x85,0x7d,0x77,0x81,
+    0x1f,0x35,0x2c,0x07,0x3b,0x61,0x08,0xd7,
+    0x2d,0x98,0x10,0xa3,0x09,0x14,0xdf,0xf4
+    };
+
+    // Plaintext 
+    uint8_t plaintext[16] = {
+    0x6b,0xc1,0xbe,0xe2,0x2e,0x40,0x9f,0x96,
+    0xe9,0x3d,0x7e,0x11,0x73,0x93,0x17,0x2a
+    };
+
+    //Extended ciphertext
+    uint8_t expected[16] = {
+    0xf3,0xee,0xd1,0xbd,0xb5,0xd2,0xa0,0x3c,
+    0x06,0x4b,0x5a,0x7e,0x3d,0xb1,0x81,0xf8
+    };
+    //REMOVE THESE COMMENTS TO USE AES-256
+    */
+
+
+
+    uint8_t buffer[16]; //temporary 16 byte array to hold block being encrypted
+    struct AES_ctx ctx; //stores the expanded key
+
+    for (int i = 0; i < numtests; i++) { //repeats encryption numtests number of times
+    memcpy(buffer, plaintext, 16);
+    AES_init_ctx(&ctx, key);
+    AES_ECB_encrypt(&ctx, buffer);
+    }
+
+    print_hex("PLAINTEXT  : ", plaintext, 16); //plaintext = the original, readable data before encryption
+    print_hex("CIPHERTEXT : ", buffer, 16); //ciphertext = scrambled output
+    print_hex("EXPECTED   : ", expected, 16); //expected = the correct ciphertext that was hard coded
+
+    if (memcmp(buffer, expected, 16) == 0) {
+        printf("TEST PASSED\n\n");
+    } else {
+        printf("TEST FAILED\n\n");
+    }
+
+    printf("Ran %d encryptions\n", numtests);
+
+    while (1) {
+    }
+
+    return 0;
+}
