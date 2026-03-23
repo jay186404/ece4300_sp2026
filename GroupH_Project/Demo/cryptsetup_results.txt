@@ -1,1 +1,91 @@
+  perf permissions OK (paranoid=-1)
 
+==========================================================
+  AES Benchmark — cryptsetup benchmark
+  Raspberry Pi 5  |  2026-03-15 19:05:19
+  Modes: CBC, CTR  |  Keys: 128, 192, 256-bit
+  GCM: not supported by cryptsetup
+  Counters: normalized to per-second rates
+==========================================================
+
+  ──────────────────────────────────────────────────────
+  AES-128-CBC           temp: 59.8'C
+  ──────────────────────────────────────────────────────
+      aes-cbc        128b      1141.0 MiB/s      2264.4 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,359,685,431 /sec    cycles
+            3,585,422,920 /sec    instructions          #    1.52  insn per cycle
+              717,826,632 /sec    cache-references
+               18,575,137 /sec    cache-misses          #    2.59% of all cache refs
+              227,820,927 /sec    branches
+                  990,700 /sec    branch-misses         #    0.43% of all branches
+                  2.004828431 seconds time elapsed
+
+  ──────────────────────────────────────────────────────
+  AES-192-CBC           temp: 62.0'C
+  ──────────────────────────────────────────────────────
+      aes-cbc        192b      1054.4 MiB/s      2042.4 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,398,184,432 /sec    cycles
+            3,714,292,775 /sec    instructions          #    1.55  insn per cycle
+              652,916,791 /sec    cache-references
+               16,667,036 /sec    cache-misses          #    2.55% of all cache refs
+              255,609,558 /sec    branches
+                  890,449 /sec    branch-misses         #    0.35% of all branches
+                  2.004511102 seconds time elapsed
+
+  ──────────────────────────────────────────────────────
+  AES-256-CBC           temp: 64.8'C
+  ──────────────────────────────────────────────────────
+      aes-cbc        256b       947.0 MiB/s      1831.7 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,398,229,244 /sec    cycles
+            3,696,004,768 /sec    instructions          #    1.54  insn per cycle
+              585,934,688 /sec    cache-references
+               15,134,405 /sec    cache-misses          #    2.58% of all cache refs
+              229,484,694 /sec    branches
+                  766,017 /sec    branch-misses         #    0.33% of all branches
+                  2.004845962 seconds time elapsed
+
+  ──────────────────────────────────────────────────────
+  AES-128-CTR           temp: 64.2'C
+  ──────────────────────────────────────────────────────
+      aes-ctr        128b      2170.0 MiB/s      2178.5 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,398,453,997 /sec    cycles
+            5,224,697,500 /sec    instructions          #    2.18  insn per cycle
+              878,818,484 /sec    cache-references
+               25,788,372 /sec    cache-misses          #    2.93% of all cache refs
+              323,332,524 /sec    branches
+                1,189,941 /sec    branch-misses         #    0.37% of all branches
+                  2.004445132 seconds time elapsed
+
+  ──────────────────────────────────────────────────────
+  AES-192-CTR           temp: 67.5'C
+  ──────────────────────────────────────────────────────
+      aes-ctr        192b      1896.4 MiB/s      1897.3 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,398,818,984 /sec    cycles
+            5,079,942,149 /sec    instructions          #    2.12  insn per cycle
+              767,279,214 /sec    cache-references
+               22,339,975 /sec    cache-misses          #    2.91% of all cache refs
+              307,010,401 /sec    branches
+                1,085,121 /sec    branch-misses         #    0.35% of all branches
+                  2.004362749 seconds time elapsed
+
+  ──────────────────────────────────────────────────────
+  AES-256-CTR           temp: 68.1'C
+  ──────────────────────────────────────────────────────
+      aes-ctr        256b      1716.5 MiB/s      1712.4 MiB/s
+  perf counters (per second, elapsed: 2.00s):
+            2,398,816,082 /sec    cycles
+            5,040,742,124 /sec    instructions          #    2.10  insn per cycle
+              693,447,702 /sec    cache-references
+               20,006,402 /sec    cache-misses          #    2.89% of all cache refs
+              277,623,531 /sec    branches
+                  942,487 /sec    branch-misses         #    0.34% of all branches
+                  2.004306310 seconds time elapsed
+
+==========================================================
+  Complete  |  temp: 68.1'C
+==========================================================
