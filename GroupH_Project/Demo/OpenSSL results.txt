@@ -1,0 +1,137 @@
+==========================================================
+  AES Benchmark — perf stat + OpenSSL
+  Raspberry Pi 5  |  2026-03-15 19:06:03
+  Modes: CBC, CTR, GCM  |  Keys: 128, 192, 256-bit
+  Window: 3s x 6 block sizes = 18s per variant
+==========================================================
+
+  ──────────────────────────────────────────────────────
+  AES-128-CBC           temp: 59.8'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.01s):
+       2,398,501,949 /sec    cycles
+       4,839,371,345 /sec    instructions                     #    2.02  insn per cycle
+         956,117,266 /sec    cache-references
+              10,254 /sec    cache-misses                     #    0.00% of all cache refs
+         500,496,350 /sec    branches
+              66,921 /sec    branch-misses                    #    0.01% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-192-CBC           temp: 67.5'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,581,451 /sec    cycles
+       5,034,953,355 /sec    instructions                     #    2.10  insn per cycle
+       1,103,298,332 /sec    cache-references
+               9,913 /sec    cache-misses                     #    0.00% of all cache refs
+         530,969,272 /sec    branches
+             306,534 /sec    branch-misses                    #    0.06% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-256-CBC           temp: 68.6'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,608,255 /sec    cycles
+       5,028,944,004 /sec    instructions                     #    2.10  insn per cycle
+       1,148,583,227 /sec    cache-references
+               9,017 /sec    cache-misses                     #    0.00% of all cache refs
+         485,685,955 /sec    branches
+              49,023 /sec    branch-misses                    #    0.01% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-128-CTR           temp: 63.1'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,490,291 /sec    cycles
+       7,352,998,236 /sec    instructions                     #    3.06  insn per cycle
+       1,371,829,357 /sec    cache-references
+               9,193 /sec    cache-misses                     #    0.00% of all cache refs
+         546,730,500 /sec    branches
+             104,962 /sec    branch-misses                    #    0.02% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-192-CTR           temp: 69.2'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,647,049 /sec    cycles
+       7,255,693,021 /sec    instructions                     #    3.02  insn per cycle
+       1,316,580,172 /sec    cache-references
+               8,792 /sec    cache-misses                     #    0.00% of all cache refs
+         535,119,167 /sec    branches
+              91,285 /sec    branch-misses                    #    0.02% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-256-CTR           temp: 67.5'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,655,039 /sec    cycles
+       7,162,420,337 /sec    instructions                     #    2.98  insn per cycle
+       1,274,190,574 /sec    cache-references
+               9,298 /sec    cache-misses                     #    0.00% of all cache refs
+         526,889,934 /sec    branches
+              80,066 /sec    branch-misses                    #    0.02% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-128-GCM           temp: 62.6'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,636,435 /sec    cycles
+       6,641,277,523 /sec    instructions                     #    2.77  insn per cycle
+       1,062,499,566 /sec    cache-references
+              10,052 /sec    cache-misses                     #    0.00% of all cache refs
+         767,929,001 /sec    branches
+           2,123,220 /sec    branch-misses                    #    0.28% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-192-GCM           temp: 69.7'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,657,420 /sec    cycles
+       6,880,240,060 /sec    instructions                     #    2.87  insn per cycle
+       1,098,082,410 /sec    cache-references
+              10,556 /sec    cache-misses                     #    0.00% of all cache refs
+         793,790,113 /sec    branches
+               7,677 /sec    branch-misses                    #    0.00% of all branches
+
+  ──────────────────────────────────────────────────────
+  AES-256-GCM           temp: 73.0'C
+  ──────────────────────────────────────────────────────
+  The 'numbers' are in 1000s of bytes per second processed.
+  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+
+  perf counters (per second, elapsed: 18.00s):
+       2,399,623,111 /sec    cycles
+       6,749,134,637 /sec    instructions                     #    2.81  insn per cycle
+       1,063,432,135 /sec    cache-references
+              10,397 /sec    cache-misses                     #    0.00% of all cache refs
+         777,635,948 /sec    branches
+               8,560 /sec    branch-misses                    #    0.00% of all branches
+
+==========================================================
+  Complete  |  temp: 73.6'C
+==========================================================
+
