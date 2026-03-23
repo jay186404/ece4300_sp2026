@@ -109,7 +109,7 @@ rule C_STATIC_LIBRARY_LINKER__xiltimer_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\AMDDesignTools\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\Edwin\Desktop\Projects\ECE4300_SP2026\GroupJ_Project\Code\Vitis\platform\microblaze_0\standalone_microblaze_0\bsp -BC:\Users\Edwin\Desktop\Projects\ECE4300_SP2026\GroupJ_Project\Code\Vitis\platform\microblaze_0\standalone_microblaze_0\bsp\libsrc\build_configs\gen_bsp
+  command = C:\AMDDesignTools\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\user\Desktop\Projects\ECE4300_SP2026\GroupJ_Project\Code\Vitis\platform\microblaze_0\standalone_microblaze_0\bsp -BC:\Users\user\Desktop\Projects\ECE4300_SP2026\GroupJ_Project\Code\Vitis\platform\microblaze_0\standalone_microblaze_0\bsp\libsrc\build_configs\gen_bsp
   description = Re-running CMake...
   generator = 1
 

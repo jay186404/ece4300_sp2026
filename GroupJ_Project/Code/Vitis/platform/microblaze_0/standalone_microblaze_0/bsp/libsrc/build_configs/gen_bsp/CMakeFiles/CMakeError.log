@@ -1,6 +1,6 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
 Compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/bin/mb-gcc.exe 
-Build flags: ;;-mlittle-endian;-mxl-soft-mul;-mcpu=v11.0;-DSDT;;-MMD;-MP;-specs=C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec;-IC:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include
+Build flags: ;;-mlittle-endian;-mxl-soft-mul;-mcpu=v11.0;-DSDT;;-MMD;-MP;-specs=C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec;-IC:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include
 Id flags:  
 
 The output was:
@@ -9,11 +9,11 @@ C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/bin/microbla
 collect2.exe: error: ld returned 1 exit status
 
 
-The C compiler identification could not be found in "C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/CMakeFiles/3.24.2/CompilerIdC/CMakeCCompilerId.d"
+The C compiler identification could not be found in "C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/CMakeFiles/3.24.2/CompilerIdC/CMakeCCompilerId.d"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
 Compiler: C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/bin/mb-g++.exe 
-Build flags: ;;-mlittle-endian;-mxl-soft-mul;-mcpu=v11.0;-DSDT;;-MMD;-MP;-specs=C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec;-IC:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include
+Build flags: ;;-mlittle-endian;-mxl-soft-mul;-mcpu=v11.0;-DSDT;;-MMD;-MP;-specs=C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec;-IC:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include
 Id flags:  
 
 The output was:
@@ -22,5 +22,5 @@ C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/bin/microbla
 collect2.exe: error: ld returned 1 exit status
 
 
-The CXX compiler identification could not be found in "C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/CMakeFiles/3.24.2/CompilerIdCXX/CMakeCXXCompilerId.d"
+The CXX compiler identification could not be found in "C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/CMakeFiles/3.24.2/CompilerIdCXX/CMakeCXXCompilerId.d"
 

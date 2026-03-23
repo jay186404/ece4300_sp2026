@@ -67,7 +67,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include;C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include;C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include-fixed;C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/microblazeeb-xilinx-elf/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/include;C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include;C:/AMDDesignTools/2025.2/gnu/microblaze/nt/x86_64-oesdk-mingw32/usr/lib/microblaze-xilinx-elf/gcc/microblaze-xilinx-elf/13.3.0/include-fixed;C:/AMDDesignTools/2025.2/Vitis/gnu/microblaze/nt/microblazeeb-xilinx-elf/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

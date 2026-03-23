@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/standalone/src/common
+# Install script for directory: C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/standalone/src/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/common/intr/cmake_install.cmake")
+  include("C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/common/intr/cmake_install.cmake")
 endif()
 

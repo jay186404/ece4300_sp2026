@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/standalone/src/microblaze
+# Install script for directory: C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/standalone/src/microblaze
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

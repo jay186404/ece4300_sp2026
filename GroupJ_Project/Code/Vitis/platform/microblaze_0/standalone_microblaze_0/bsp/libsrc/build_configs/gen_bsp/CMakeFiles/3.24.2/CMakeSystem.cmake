@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.26200")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("C:/Users/Edwin/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/microblaze_toolchain.cmake")
+include("C:/Users/user/Desktop/Projects/ECE4300_SP2026/GroupJ_Project/Code/Vitis/platform/microblaze_0/standalone_microblaze_0/bsp/microblaze_toolchain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")
