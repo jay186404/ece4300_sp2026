@@ -6,30 +6,19 @@
 
 ## Overview
 
-This project benchmarks the performance of the Advanced Encryption Standard (AES) algorithm across multiple softcore processor implementations. By targeting the same cryptographic workload on different softcore architectures, we aim to produce a fair, apples-to-apples comparison of each platform's throughput, latency, and resource utilization when executing AES encryption and decryption.
+This project benchmarks the performance of the Advanced Encryption Standard (AES) algorithm with the MicroBlaze 32-bit RISC softcore processor implementation. By targeting the same cryptographic workload on this softcore architectures, we aim to produce a fair benchmark of the platform's throughput, latency, and resource utilization when executing AES encryption and decryption.
 
 ---
 
 ## Motivation
 
-AES is one of the most widely deployed symmetric encryption standards in the world, used in everything from TLS/HTTPS to disk encryption and embedded security modules. Understanding how different softcore processors handle AES workloads is valuable for:
+AES is one of the most widely deployed symmetric encryption standards in the world, used in everything from TLS/HTTPS to disk encryption and embedded security modules. Understanding how this softcore processor handle AES workloads is valuable for:
 
 - Selecting the right FPGA-based processor for security-sensitive embedded applications
 - Identifying bottlenecks in instruction pipelines when executing compute-heavy cryptographic loops
 - Evaluating the trade-off between hardware resource usage (LUTs, BRAMs, DSPs) and encryption throughput
 
 ---
-
-## Softcore Implementations Under Test
-
-The following softcore processors are included in our benchmark suite:
-
-| Softcore | Architecture | Target FPGA | Notes |
-|----------|-------------|-------------|-------|
-| MicroBlaze | 32-bit RISC | Xilinx/AMD | Xilinx proprietary softcore |
-| LEON3 | 32-bit SPARC V8 | Vendor-agnostic | Open-source, FrontGrade Gaisler |
-| PicoRV32 | 32-bit RISC-V | Vendor-agnostic | Open-source, YosysHQ |
-| VexRiscv | 32-bit RISC-V | Vendor-agnostic | Configurable pipeline depth |
 
 ## Presentation
 
