@@ -1,0 +1,92 @@
+module fir_seq_mac #(
+    parameter NTAPS = 8,
+    parameter DW    = 16,   // data width
+    parameter CW    = 16,   // coefficient width
+    parameter AW    = 40    // accumulator width
+)(
+    input  wire                     clk,
+    input  wire                     rst,
+    input  wire                     sample_valid,
+    input  wire signed [DW-1:0]     sample_in,
+    output reg                      y_valid,
+    output reg signed [AW-1:0]      y_out
+);
+
+    // Storage for recent input samples
+    reg signed [DW-1:0] x_reg [0:NTAPS-1];
+
+    // FIR coefficients
+    reg signed [CW-1:0] h [0:NTAPS-1];
+
+    // Accumulator and control
+    reg signed [AW-1:0] acc;
+    reg [$clog2(NTAPS):0] k;
+    reg busy;
+
+    integer i;
+
+    // Initialize coefficients
+    initial begin
+        h[0] = 16'sd1;
+        h[1] = 16'sd2;
+        h[2] = 16'sd3;
+        h[3] = 16'sd4;
+        h[4] = 16'sd4;
+        h[5] = 16'sd3;
+        h[6] = 16'sd2;
+        h[7] = 16'sd1;
+
+        for (i = 0; i < NTAPS; i = i + 1)
+            x_reg[i] = 0;
+
+        acc   = 0;
+        k     = 0;
+        busy  = 0;
+        y_out = 0;
+        y_valid = 0;
+    end
+
+    always @(posedge clk) begin
+        if (rst) begin
+            for (i = 0; i < NTAPS; i = i + 1)
+                x_reg[i] <= 0;
+
+            acc     <= 0;
+            k       <= 0;
+            busy    <= 0;
+            y_out   <= 0;
+            y_valid <= 0;
+        end
+        else begin
+            y_valid <= 0;
+
+            // Load a new sample and start a new FIR computation
+            if (sample_valid && !busy) begin
+                // Shift old samples down the line
+                for (i = NTAPS-1; i > 0; i = i - 1)
+                    x_reg[i] <= x_reg[i-1];
+
+                x_reg[0] <= sample_in;
+
+                acc  <= 0;
+                k    <= 0;
+                busy <= 1;
+            end
+
+            // Sequential multiply-accumulate across taps
+            else if (busy) begin
+                acc <= acc + x_reg[k] * h[k];
+
+                if (k == NTAPS-1) begin
+                    y_out   <= acc + x_reg[k] * h[k];
+                    y_valid <= 1;
+                    busy    <= 0;
+                end
+                else begin
+                    k <= k + 1;
+                end
+            end
+        end
+    end
+
+endmodule
