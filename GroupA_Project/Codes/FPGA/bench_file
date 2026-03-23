@@ -1,0 +1,46 @@
+`timescale 1ns/1ps
+
+module fir_tb;
+
+    reg clk = 0;
+    reg rst = 1;
+    reg sample_valid = 0;
+    reg signed [15:0] sample_in = 0;
+
+    wire signed [39:0] y_out;
+    wire y_valid;
+
+    // 100 MHz clock
+    always #5 clk = ~clk;
+
+    
+    fir_seq_mac DUT (
+        .clk(clk),
+        .rst(rst),
+        .sample_valid(sample_valid),
+        .sample_in(sample_in),
+        .y_valid(y_valid),
+        .y_out(y_out)
+    );
+
+    initial begin
+        
+        #20;
+        rst = 0;
+
+        
+        #20;
+
+       
+        sample_in = 16'sd10;
+        sample_valid = 1;
+        #10;
+        sample_valid = 0;
+
+        
+        #300;
+
+        $stop;
+    end
+
+endmodule
