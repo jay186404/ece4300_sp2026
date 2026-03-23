@@ -30,4 +30,4 @@ Link: https://github.com/california-polytechnic-university/ECE4300_SP2026/blob/9
 
 ## Report
 
-Link: 
+Link: https://github.com/california-polytechnic-university/ECE4300_SP2026/blob/cbff5cc4442c05bfd132a45a053e55d78f611513/GroupJ_Project/Document/ECE4300_Project_Article.pdf
