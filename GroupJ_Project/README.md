@@ -26,7 +26,7 @@ Link: https://youtube.com/shorts/gfvgCmoDOPA?feature=share
 
 ## Presentation
 
-Link: 
+Link: https://github.com/california-polytechnic-university/ECE4300_SP2026/blob/927e761a7aa1dab8a3db5e0c8dbe44f83d7643a2/GroupJ_Project/Presentation/ECE4300_Project_Slides.pdf
 
 ## Report
 
