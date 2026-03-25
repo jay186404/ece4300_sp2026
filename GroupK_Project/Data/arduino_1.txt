@@ -1,0 +1,58 @@
+AES Benchmark on Arduino Uno
+Using Crypto library
+
+========================================
+Benchmarking AES-128
+Key size (bytes): 16
+Block size (bytes): 16
+State size (bytes): 181
+
+Key setup total (us): 159756
+Key setup avg (us):   159.76
+
+Encrypt total (us):   1131460
+Encrypt avg/block:    565.73 us
+Decrypt total (us):   2157536
+Decrypt avg/block:    1078.77 us
+
+Ciphertext sample:    3A D7 7B B4 0D 7A 36 60 A8 9E CA F3 24 66 EF 97 
+Recovered sample:     6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A 
+Verification:         PASS
+
+========================================
+Benchmarking AES-192
+Key size (bytes): 24
+Block size (bytes): 16
+State size (bytes): 213
+
+Key setup total (us): 167680
+Key setup avg (us):   167.68
+
+Encrypt total (us):   1359816
+Encrypt avg/block:    679.91 us
+Decrypt total (us):   2613492
+Decrypt avg/block:    1306.75 us
+
+Ciphertext sample:    BD 33 4F 1D 6E 45 F2 5F F7 12 A2 14 57 1F A5 CC 
+Recovered sample:     6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A 
+Verification:         PASS
+
+========================================
+Benchmarking AES-256
+Key size (bytes): 32
+Block size (bytes): 16
+State size (bytes): 245
+
+Key setup total (us): 205088
+Key setup avg (us):   205.09
+
+Encrypt total (us):   1588168
+Encrypt avg/block:    794.08 us
+Decrypt total (us):   3069444
+Decrypt avg/block:    1534.72 us
+
+Ciphertext sample:    F3 EE D1 BD B5 D2 A0 3C 06 4B 5A 7E 3D B1 81 F8 
+Recovered sample:     6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A 
+Verification:         PASS
+
+Done.
