@@ -2,15 +2,12 @@
   AES Benchmark — perf stat + OpenSSL
   Raspberry Pi 5  |  2026-03-15 19:06:03
   Modes: CBC, CTR, GCM  |  Keys: 128, 192, 256-bit
-  Window: 3s x 6 block sizes = 18s per variant
 ==========================================================
 
   ──────────────────────────────────────────────────────
   AES-128-CBC           temp: 59.8'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-cbc        128b      1911.0 MiB/s      3494.0 MiB/s
   perf counters (per second, elapsed: 18.01s):
        2,398,501,949 /sec    cycles
        4,839,371,345 /sec    instructions                     #    2.02  insn per cycle
@@ -22,9 +19,7 @@
   ──────────────────────────────────────────────────────
   AES-192-CBC           temp: 67.5'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-cbc        192b      1595.0 MiB/s      2976.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,581,451 /sec    cycles
        5,034,953,355 /sec    instructions                     #    2.10  insn per cycle
@@ -36,9 +31,7 @@
   ──────────────────────────────────────────────────────
   AES-256-CBC           temp: 68.6'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-cbc        256b      1367.0 MiB/s      2559.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,608,255 /sec    cycles
        5,028,944,004 /sec    instructions                     #    2.10  insn per cycle
@@ -50,9 +43,7 @@
   ──────────────────────────────────────────────────────
   AES-128-CTR           temp: 63.1'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-ctr        128b      3226.0 MiB/s      3224.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,490,291 /sec    cycles
        7,352,998,236 /sec    instructions                     #    3.06  insn per cycle
@@ -64,9 +55,7 @@
   ──────────────────────────────────────────────────────
   AES-192-CTR           temp: 69.2'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-ctr        192b      2781.0 MiB/s      2782.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,647,049 /sec    cycles
        7,255,693,021 /sec    instructions                     #    3.02  insn per cycle
@@ -78,9 +67,7 @@
   ──────────────────────────────────────────────────────
   AES-256-CTR           temp: 67.5'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-ctr        256b      2414.0 MiB/s      2414.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,655,039 /sec    cycles
        7,162,420,337 /sec    instructions                     #    2.98  insn per cycle
@@ -92,9 +79,7 @@
   ──────────────────────────────────────────────────────
   AES-128-GCM           temp: 62.6'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-gcm        128b      2243.0 MiB/s      2208.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,636,435 /sec    cycles
        6,641,277,523 /sec    instructions                     #    2.77  insn per cycle
@@ -106,9 +91,7 @@
   ──────────────────────────────────────────────────────
   AES-192-GCM           temp: 69.7'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-gcm        192b      1995.0 MiB/s      2000.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,657,420 /sec    cycles
        6,880,240,060 /sec    instructions                     #    2.87  insn per cycle
@@ -120,9 +103,7 @@
   ──────────────────────────────────────────────────────
   AES-256-GCM           temp: 73.0'C
   ──────────────────────────────────────────────────────
-  The 'numbers' are in 1000s of bytes per second processed.
-  type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-
+      aes-gcm        256b      1817.0 MiB/s      1842.0 MiB/s
   perf counters (per second, elapsed: 18.00s):
        2,399,623,111 /sec    cycles
        6,749,134,637 /sec    instructions                     #    2.81  insn per cycle
@@ -134,4 +115,3 @@
 ==========================================================
   Complete  |  temp: 73.6'C
 ==========================================================
-
