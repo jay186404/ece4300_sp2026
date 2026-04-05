@@ -1,0 +1,136 @@
+`timescale 1ns/1ps
+
+module fir_parallel_tb;
+
+   
+    localparam NTAPS      = 32;   // match your sequential 8-tap FIR
+    localparam DW         = 16;
+    localparam CW         = 16;
+    localparam AW         = 40;
+    localparam CLK_PERIOD = 10;  // ns => 100 MHz
+
+  
+    reg clk = 0;
+    reg rst = 1;
+    reg sample_valid = 0;
+    reg signed [DW-1:0] sample_in = 0;
+
+    wire y_valid;
+    wire signed [AW-1:0] y_out;
+
+ 
+    always #(CLK_PERIOD/2) clk = ~clk;
+
+    // =========================
+    // Instantiate DUT
+    // =========================
+    fir_parallel_generic #(
+        .NTAPS(NTAPS),
+        .DW(DW),
+        .CW(CW),
+        .AW(AW)
+    ) DUT (
+        .clk(clk),
+        .rst(rst),
+        .sample_valid(sample_valid),
+        .sample_in(sample_in),
+        .y_valid(y_valid),
+        .y_out(y_out)
+    );
+
+   
+    integer cycle_count = 0;
+    integer input_count = 0;
+    integer output_count = 0;
+
+    integer first_input_cycle  = -1;
+    integer first_output_cycle = -1;
+    integer last_output_cycle  = -1;
+
+    // Count cycles after reset released
+    always @(posedge clk) begin
+        if (rst)
+            cycle_count <= 0;
+        else
+            cycle_count <= cycle_count + 1;
+    end
+
+    // Record input events
+    always @(posedge clk) begin
+        if (!rst && sample_valid) begin
+            input_count <= input_count + 1;
+
+            if (first_input_cycle == -1)
+                first_input_cycle <= cycle_count;
+
+            $display("INPUT  : cycle=%0d  time=%0t ns  sample_in=%0d",
+                     cycle_count, $time, sample_in);
+        end
+    end
+
+  
+    always @(posedge clk) begin
+        if (!rst && y_valid) begin
+            output_count <= output_count + 1;
+
+            if (first_output_cycle == -1) begin
+                first_output_cycle <= cycle_count;
+                $display("OUTPUT : cycle=%0d  time=%0t ns  y_out=%0d  (first output)",
+                         cycle_count, $time, y_out);
+            end
+            else begin
+                $display("OUTPUT : cycle=%0d  time=%0t ns  y_out=%0d  spacing_from_prev=%0d cycles",
+                         cycle_count, $time, y_out, cycle_count - last_output_cycle);
+            end
+
+            last_output_cycle <= cycle_count;
+        end
+    end
+
+  
+    integer i;
+
+    initial begin
+       
+        rst = 1;
+        sample_valid = 0;
+        sample_in = 0;
+
+        #(2*CLK_PERIOD);
+        rst = 0;
+
+
+        #(2*CLK_PERIOD);
+
+      
+        sample_valid = 1;
+        for (i = 0; i < 20; i = i + 1) begin
+            sample_in = i + 1;   // 1, 2, 3, ... 20
+            #CLK_PERIOD;
+        end
+        sample_valid = 0;
+        sample_in = 0;
+
+        
+        #(10*CLK_PERIOD);
+
+      
+        $display("============================================");
+        $display("SUMMARY");
+        $display("NTAPS = %0d", NTAPS);
+        $display("Inputs sent = %0d", input_count);
+        $display("Outputs seen = %0d", output_count);
+
+        if (first_input_cycle != -1 && first_output_cycle != -1) begin
+            $display("Latency = %0d cycles", first_output_cycle - first_input_cycle);
+            $display("Latency = %0d ns", (first_output_cycle - first_input_cycle)*CLK_PERIOD);
+        end
+
+        $display("If output spacing is 1 cycle, throughput = 1 sample/clock");
+        $display("At 100 MHz, that means throughput = 100 MS/s");
+        $display("============================================");
+
+        $stop;
+    end
+
+endmodule
