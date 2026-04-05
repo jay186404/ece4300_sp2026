@@ -1,0 +1,63 @@
+module fir_parallel #(
+    parameter NTAPS = 32,
+    parameter DW    = 16,
+    parameter CW    = 16,
+    parameter AW    = 40
+)(
+    input  wire                     clk,
+    input  wire                     rst,
+    input  wire                     sample_valid,
+    input  wire signed [DW-1:0]     sample_in,
+    output reg                      y_valid,
+    output reg signed [AW-1:0]      y_out
+);
+
+    reg signed [DW-1:0] x_reg [0:NTAPS-1];
+    reg signed [CW-1:0] h     [0:NTAPS-1];
+
+    reg signed [AW-1:0] sum_next;
+
+    integer i;
+
+    initial begin
+        for (i = 0; i < NTAPS; i = i + 1) begin
+            h[i]     = 16'sd1;   // all coefficients = 1
+            x_reg[i] = 0;
+        end
+        y_out   = 0;
+        y_valid = 0;
+    end
+
+    // Compute next output using the incoming sample plus delayed history
+    always @(*) begin
+        sum_next = 0;
+        sum_next = h[0] * sample_in;
+
+        for (i = 1; i < NTAPS; i = i + 1)
+            sum_next = sum_next + h[i] * x_reg[i-1];
+    end
+
+    always @(posedge clk) begin
+        if (rst) begin
+            for (i = 0; i < NTAPS; i = i + 1)
+                x_reg[i] <= 0;
+
+            y_out   <= 0;
+            y_valid <= 0;
+        end
+        else begin
+            y_valid <= 0;
+
+            if (sample_valid) begin
+                for (i = NTAPS-1; i > 0; i = i - 1)
+                    x_reg[i] <= x_reg[i-1];
+
+                x_reg[0] <= sample_in;
+
+                y_out   <= sum_next;
+                y_valid <= 1;
+            end
+        end
+    end
+
+endmodule
